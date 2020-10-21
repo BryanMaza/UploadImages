@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.grid{
+  box-shadow:  -1px 5px 14px -6px rgba(0,0,0,0.75);
+  border-radius: 12px;
+ 
+}
+.grid p{
+  color: #666; 
+  opacity: 0.5; 
+}
+
+
+.drop-zone { 
+	border: dotted 3px lightgray; 
+	opacity: 0.5; 
+	color: #666; 
+	text-align: center 
+}
+
+.file-over { 
+	border: dotted 3px dodgerblue; 
+}
+.boton{
+  border-radius: 10px;
+}
+.icon{
+  font-size: 37px ;
+  background-color: white;
+  color: green;
+}
+.image{
+  border-radius: 15px ;
+}
+.copy_btn{
+  border-radius: 10px;
+}

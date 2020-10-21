@@ -1,0 +1,47 @@
+<div class="row justify-content-center  align-items-center h-100 text-center">
+
+    <div class="col-md-5 ml-5 p-3  grid" *ngIf="!image.cargando && !image.cargada">
+
+
+        <h2>Upload your Image</h2>
+        <p>File should be .Jpeg, .Png..</p>
+        <div appDragDrop [(image)]="image"    class="col-md-12 drop-zone p-4">
+            <img src="./assets/img/insert_photo.svg" alt="">
+
+            <p>Drag & Drop your image here</p>
+        </div>
+        <p class="m-3">Or</p>
+
+        <form #sendForm="ngForm">
+
+            <input type="file" (change)="onFileInput($event)" #file id="file" name="file" style="display: none">
+            <button class="btn btn-primary boton" (click)="file.click()"> Choose a file </button>
+
+        </form>
+    </div>
+    <div class=" col-md-5 ml-5 p-3 grid text-left" *ngIf="image.cargando && !image.cargada">
+
+        <h3 > <b> Uploading...</b></h3>
+        <mat-progress-bar mode="determinate" value="{{image.progress}}"></mat-progress-bar>
+    </div>
+    <div class=" col-md-5 ml-5 p-3 grid text-center" *ngIf="image.cargada">
+
+        <mat-icon class="icon" aria-hidden="false" aria-label="Example checked icon">check_circle</mat-icon>
+        <h3><b>Uploaded Successfully!</b></h3>
+        <img class="img-fluid" [src]="image.url" alt="icon">
+
+
+        <div class="input-group mt-3 mb-2">
+            <input id="clipboard-example-textarea" [(ngModel)]="image.url" type="text" class="form-control" aria-label="Text input with dropdown button">
+            <div class="input-group-append">
+                <button [cdkCopyToClipboard]="image.url" class="btn btn-primary copy_btn " type="button" >Copy Link</button>
+              
+            </div>
+          </div>
+          
+        
+
+    </div>
+    
+
+</div>
